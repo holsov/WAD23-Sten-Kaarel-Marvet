@@ -17,7 +17,8 @@
             <td>{{ grade.hw1}} </td>
             <td>{{ grade.hw2}} </td>
             <td>{{ grade.exam }} </td>
-            <td>{{ grade.final }} </td> 
+            <td class='red' v-if="grade.final <= 20 || grade.exam <= 20"> {{ grade.final}}</td>
+            <td class='green' v-else>{{ grade.final}}</td>
           </tr>
           </table>
 </div>
@@ -74,5 +75,11 @@ td {
   width: 40%;
   display: flex;
   justify-content: center;
+}
+.green {
+  background: rgb(0, 171, 0);
+}
+.red {
+  background: red;
 }
 </style>
