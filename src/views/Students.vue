@@ -51,4 +51,28 @@ export default {
 h1 {
   font-size: 20px;
 }
+table, th, td {
+  border: 3px solid;
+  border-color:  #d5d7d8;
+  padding:5px;
+}
+table {
+  border-collapse: collapse;
+}
+th {
+  background: rgb(88, 125, 142);
+}
+td {
+  background: rgb(123, 175, 199);
+}
+.container {
+  background: #d5d7d8;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  margin: auto;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
 </style>
