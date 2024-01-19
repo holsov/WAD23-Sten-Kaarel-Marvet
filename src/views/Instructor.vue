@@ -17,7 +17,7 @@
             <td><input name="hw1" type="number" id="hw1" required v-model="grade.hw1"></td>
             <td><input name="hw2" type="number" id="hw2" required v-model="grade.hw2"></td>
             <td><input name="exam" type="number" id="exam" required v-model="grade.exam "></td>
-            <td><input name="final" type="number" id="final" required v-model="grade.final "></td>
+            <td name="final" id="final" >{{ grade.hw1 + grade.hw2 + grade.exam }}</td>
           </tr>
           </table>
     </div>
@@ -76,5 +76,8 @@ h1 {
 input{
   width: 100px;
   text-align: center
+}
+#final {
+  background:rgb(208, 89, 89);
 }
 </style>
