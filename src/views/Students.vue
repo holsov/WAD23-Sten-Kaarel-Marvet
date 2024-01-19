@@ -17,9 +17,9 @@
           <td>{{ grade.hw1 }} </td>
           <td>{{ grade.hw2 }} </td>
           <td>{{ grade.exam }} </td>
-          <td class='red' v-if="grade.final <= 20 || grade.exam <= 20" @click="justifyGrade(grade)"> {{ grade.final }}
+          <td class='red final' v-if="grade.final <= 20 || grade.exam <= 20" @click="justifyGrade(grade)"> {{ grade.final }}
           </td>
-          <td class='green' v-else @click="justifyGrade(grade)">{{ grade.final }}</td>
+          <td class='green final' v-else @click="justifyGrade(grade)">{{ grade.final }}</td>
         </tr>
       </table>
       <div class="p" v-if="justification != ''">
