@@ -4,7 +4,22 @@
 
 
 <div class="container">
-    
+  <table>
+          <tr>
+            <th>St. Code</th>
+            <th>Homework 1</th>
+            <th>Homework 2</th>
+            <th>Exam</th>
+            <th>Final Grade</th>
+          </tr>
+          <tr class="item" v-for="grade in grades" :key="grade.id">
+            <td>{{ grade.studentcode }} </td>
+            <td>{{ grade.hw1}} </td>
+            <td>{{ grade.hw2}} </td>
+            <td>{{ grade.exam }} </td>
+            <td>{{ grade.final }} </td> 
+          </tr>
+          </table>
 </div>
 </div>
 </template>
