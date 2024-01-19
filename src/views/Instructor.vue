@@ -18,6 +18,7 @@
             <td><input name="hw2" type="number" id="hw2" required v-model="grade.hw2"></td>
             <td><input name="exam" type="number" id="exam" required v-model="grade.exam "></td>
             <td name="final" id="final" >{{ grade.hw1 + grade.hw2 + grade.exam }}</td>
+            <td><button class="update"  @click="updateGrade(grade.id, grade)">update</button> </td> 
           </tr>
           </table>
     </div>
@@ -48,6 +49,20 @@ export default {
         .then((data) => (this.grades = data))
         .catch((err) => console.log(err.message));
   },
+  updateGrade(id, grade) {
+      fetch(`http://localhost:3000/api/grades/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify( {"id": id, "studentcode": grade.studentcode, "studentname":grade.studentname, "hw1": grade.hw1, "hw2": grade.hw2, "exam": grade.exam, "final": grade.hw1 + grade.hw2 + grade.exam}),
+            })
+        .then((response) => {
+          this.$router.push("/");
+
+        })
+        .catch((e) => {console.log(e);});
+    },
   },
   mounted() {
     this.fetchRecords();
